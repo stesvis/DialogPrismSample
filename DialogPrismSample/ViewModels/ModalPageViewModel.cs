@@ -1,14 +1,17 @@
 ﻿using Prism.Commands;
-using Prism.Navigation;
+using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DialogPrismSample.ViewModels
 {
-    public class MainPageViewModel
+    public class ModalPageViewModel : BindableBase
     {
         public DelegateCommand ShowDialogCommand { get; set; }
 
-        public MainPageViewModel(IDialogService dialogService)
+        public ModalPageViewModel(IDialogService dialogService)
         {
             ShowDialogCommand = new DelegateCommand(async () =>
             {

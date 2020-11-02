@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             x:Class="DialogPrismSample.Views.MainPage">
-
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="DialogPrismSample.Views.ModalPage">
     <StackLayout Spacing="50">
-        <Label Text="Main Page"
+        <Label Text="Modal Page"
                FontSize="Title"
                FontAttributes="Bold"
                HorizontalOptions="Center" />
@@ -16,20 +16,12 @@
                 TextColor="White"
                 BackgroundColor="Red"
                 Text="Show Dialog" />
-        <Button Command="{prism:NavigateTo 'ModalPage' UseModalNavigation=True}"
+        <Button Command="{prism:GoBack}"
                 VerticalOptions="Center"
                 Margin="20"
                 HorizontalOptions="FillAndExpand"
                 TextColor="White"
                 BackgroundColor="DarkBlue"
-                Text="Go to modal page" />
+                Text="Go back" />
     </StackLayout>
-    <!--
-    <Button  Command="{prism:ShowDialog DialogView}"
-              VerticalOptions="Center"
-              Margin="20"
-              HorizontalOptions="FillAndExpand"
-              TextColor="White"
-              BackgroundColor="Red"
-              Text="Show Dialog"/>-->
 </ContentPage>
